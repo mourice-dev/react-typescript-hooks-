@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState } from 'react'
 
 interface MyChildProp {
-    handleClick: () => void;
+  handleClick: () => void;
 }
 
 // 1. MyChild is defined OUTSIDE the parent
@@ -16,7 +16,7 @@ export function MyParent() {
   // 2. useCallback is a hook, it MUST be inside the parent component
   const memoizedFunction = React.useCallback(() => {
     console.log("Doing something...");
-    
+
   }, []);
 
   return (
