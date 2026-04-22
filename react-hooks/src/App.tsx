@@ -1,10 +1,12 @@
 
-import {MyParent} from './MyParent'
+// import { MyParent } from './MyParent'
+import UseRefs from './useRefs'
 
 export default function App() {
   return (
     <>
-      <MyParent />
+      <UseRefs />
+      
     </>
   )
 }
