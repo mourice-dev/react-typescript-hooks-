@@ -23,15 +23,20 @@ export default function DarkMode() {
 
 function Page() {
 
-    const { theme, toggleTheme } : contextType | null = useContext(ThemeContext);
+    const { theme, toggleTheme } = useContext(ThemeContext) as contextType;
 
     return (
         <div
             style={{
                 backgroundColor: theme === "light" ? "white" : "black",
                 color: theme === "light" ? "black" : "white",
-                height: "100vh",
-                margin : "0"
+                minHeight: "100vh",
+                width: "100vw", 
+                position: "absolute", 
+                top: 0, 
+                left: 0, 
+                padding: "20px", 
+                boxSizing: "border-box" 
             }}>
             <h3>ThemeSwitcher</h3>
             <p>{theme}</p>
