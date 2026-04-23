@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react"
 
-export const UserContext = createContext<string | null>(null);
+export const UserContext = createContext("");
 
 export default function UseContexts() {
     const [user, setUser] = useState("Maurice");
