@@ -1,11 +1,11 @@
 
 // import { MyParent } from './MyParent'
-import UseRefs from './useRefs'
+import VideoPlayer from './VideoPlayer'
 
 export default function App() {
   return (
     <>
-      <UseRefs />
+      <VideoPlayer />
       
     </>
   )
