@@ -4,13 +4,13 @@
 // import UseContexts from "./UseContexts";
 // import DarkMode from "./DarkMode";
 // import  UseReducers  from "./useReducers"
-import FormRed from "./FormRed";
+import ShoppingCart from "./ShoppingCart";
 
 export default function App() {
   return (
     <>
       {/* <UseContexts /> */}
-      <FormRed />
+      <ShoppingCart />
     </>
   );
 }
