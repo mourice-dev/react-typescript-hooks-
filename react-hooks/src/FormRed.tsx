@@ -16,35 +16,38 @@ export default function FormRed() {
       case "form change":
         return {
           ...state,
-          [action.name]: action.state,
+          [action.field]: action.value,
         };
-      case "form start":
+      case "form_start":
         return {
           ...state,
           status: "loading",
         };
-      case "form success":
+      case "form_success":
         return {
           ...initialState,
           status: "success",
         };
+      default:
+        return state;
     }
   }
   function handleChange(e) {
     dispatch({
       type: "form change",
       field: e.target.name,
-      state: e.target.value,
+      value: e.target.value,
     });
   }
 
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   function submitHandle(e) {
-    dispatch({ type: "submit start" });
+    e.preventDefault();
+    dispatch({ type: "form_start" });
 
     setTimeout(() => {
-      dispatch({ type: "submit start" });
+      dispatch({ type: "form_success" });
     }, 2000);
   }
 
@@ -55,10 +58,11 @@ export default function FormRed() {
         <input type='text' name="lastname" value={state.lastname} onChange={handleChange} />
         <input type='email'name="email" value={state.email} onChange={handleChange} />
         <input type='date' name="date" value={state.date} onChange={handleChange} />
-        <button type='submit' name="" disabled>
-          {state.status}
+        <button type='submit' name="status" disabled={state.status === "loading"}>
+          {state.status === 'loading' ? 'Submitting...' : 'Submit'}
         </button>
       </form>
     </>
   );
 }
+    
